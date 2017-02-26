@@ -1,0 +1,107 @@
+<!--Created by lakshya pawa on 2/22/17.-->
+
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta charset="utf-8" />
+    <title>Discover Designers</title>
+    <meta name="description" content="One button, Many Designers"/>
+    <meta name="author" content="@lakshyapawa"/>
+    <meta name="viewport" content="width=450, maximum-scale=1"/>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="icons/style.css" media="screen"/>
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <meta name="google-site-verification" content="6BAr5PgbpvKag1y8k-rh0gZPuzlZGkkIvMyDutB8DIc" />
+    <link rel="manifest" href="manifest.json">
+    <!--<script src="../cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>-->
+
+<!--&lt;!&ndash; OneSignal &ndash;&gt;-->
+<!--<script>-->
+  <!--var OneSignal = window.OneSignal || [];-->
+  <!--OneSignal.push(["init", {-->
+    <!--appId: "3ce11829-b6cc-4a57-bb1c-71e807644d2a",-->
+    <!--safari_web_id: 'web.onesignal.auto.009a4322-838f-4341-bf26-c81fd75aa063',-->
+    <!--autoRegister: true,-->
+    <!--notifyButton: {-->
+      <!--enable: false-->
+      <!--}-->
+    <!--}]);-->
+<!--</script>-->
+
+<!-- Intercom -->
+<!--<script async src='../www.kontaktify.com/embedd7b2.js?eyJwb3NpdGlvbiI6InJpZ2h0IiwiY29sb3IiOiJmZmZjMDEiLCJjdXN0b21Db2xvciI6dHJ1ZSwiaWNvbiI6ImxpZmVzYXZlciIsInByb25vdW4iOiJ1cyIsImxhbmd1YWdlIjoiZW4iLCJicmFuZGVkIjpmYWxzZSwiaW50cm9UZXh0IjoiVGhlIFN0YXJ0dXAgQnV0dG9uOiBBIGN1cmF0ZWQsIHJhbmRvbWlzZWQgYnV0dG9uIGZlYXR1cmluZyAyMCBkaWZmZXJlbnQgc3RhcnR1cHMgZXZlcnkgZGF5LiBRdWVzdGlvbnMgb3IgaW5xdWlyaWVzPyBHZXQgaW4gdG91Y2ggYmVsb3cuIiwiY2hhbm5lbHMiOltbInR3aXR0ZXIiLCJyeWFuaGV5Ym91cm4iLCJzb2NpYWwiXSxbImVtYWlsIiwiaGVsbG9Ac3RhcnR1cGJ1dHRvbi5jb20iLCJjbGFzc2ljIl1dfQ=='></script>-->
+
+<!-- Google Analytics -->
+<!--<script>-->
+  <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+  <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+  <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+  <!--})(window,document,'script','../www.google-analytics.com/analytics.js','ga');-->
+
+  <!--ga('create', 'UA-91757868-1', 'auto');-->
+  <!--ga('send', 'pageview');-->
+
+<!--</script>-->
+
+<!-- Button Script Call -->
+<script type="text/javascript">
+    function theFunction () {
+    }
+</script>
+
+<!-- URL List -->
+<script>
+    var urls = [];
+    function showlinks() {
+        $.get('/getLinks',function (data,status) {
+            $('#todolist').html('');
+            let i=0;
+            for(link of data){
+                urls[i]=link.link;
+                i++;
+            }
+
+        });
+        goSomewhere();
+    }
+    function goSomewhere() {
+        var url = urls[Math.floor(Math.random()*urls.length)];
+        window.open(url, '_blank');
+    }
+</script>
+</head>
+<body>
+    <div id="wrap">
+      <div id="contain">
+        <div id="content">
+          <div id="header" class="animated bounceIn">
+            <header>
+              <a class="button hvr-shrink" href="#" onClick="showlinks(); return theFunction();" ><img class="bounce branding" src="img/button.png" alt="The Startup Button" style="width:320px; cursor: pointer; cursor: hand;"></a>
+            </header>
+          </div>
+            <a class="mail"><h2 style="width:400px; margin-bottom:8px;" class="animated fadeIn">Discover a new designer 🤘</h2></a>
+            <a href="#" class="animated fadeIn hvr-shrink" style="color:white; font-size:18px; cursor: pointer; cursor: hand;"onmouseover="this.style.color='#FEFA07';" onmouseout="this.style.color='white';"> <span style="text-decoration: underline;cursor: pointer; cursor: hand;">or submit your own</span></a>
+          </div>
+          <br>
+      <footer>
+        <!--<p class="animated fadeInUp" style="color:#e9e4ff">122421 discoveries made so far 🔥</p>-->
+        <p class="animated fadeInUp">
+        <a href="#" class="red" >About</a>&nbsp
+        <a href="#" class="red" >•</a>&nbsp
+        <!--<a href="mailto:hello@startupbutton.com" class="blue" > Contact</a>&nbsp-->
+        <!--<a href="#" class="red" >•</a>&nbsp-->
+        <!--&lt;!&ndash;<a href="http://twitter.com/share?url=https://startupbutton.com;text=The%20Startup%20Button:%20A%20curated%20startup%20randomiser.%20Engage%20and%20promote%20to%20thousands%20of%20potential%20users%20every%20day%20%f0%9f%99%8c;size=l&amp;count=none" target="_blank" class="blue" > Share</a>&nbsp&ndash;&gt;-->
+        <!--<a href="#" class="red" >•</a>&nbsp-->
+      </p>
+    </footer>
+      </div>
+    </div>
+    <script type="text/javascript" src="../code.jquery.com/jquery-latest.min.js"></script>
+  </body>
+
+<!-- Mirrored from www.startupbutton.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Feb 2017 12:50:06 GMT -->
+</html>
